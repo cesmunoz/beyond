@@ -1,0 +1,37 @@
+service: beyond-infra
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-dynamodb-local
+  - serverless-offline
+
+custom:
+  deploymentBucket:
+    versioning: true
+  serverless-offline:
+    port: 8100
+  dynamodb:
+    stages: dev
+    start:
+      port: 8100
+      migrate: true
+      seed: true
+    seed:
+      domain:
+        sources:
+          - table: Beyond
+            sources: [./seeds/dynamodb.json]
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-west-2
+  deploymentBucket:
+    name: beyond-infra-deployment-bucket
+    serverSideEncryption: AES256
+  environment:
+
+resources:
+  - ${file(resources/dynamodb.yml)}
+  - ${file(resources/s3.yml)}
+  - ${file(resources/cognito.yml)}
+  - ${file(resources/apigateway.yml)}

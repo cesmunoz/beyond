@@ -1,0 +1,160 @@
+Coachee-GetAll:
+  handler: dist/src/lambdas/api/coachee/getAll.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coachee/getAll.js
+      - dist/src/lambdas/api/coachee/common.js
+  events:
+    - http:
+        path: /coachee
+        method: get
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Coachee-Get:
+  handler: dist/src/lambdas/api/coachee/get.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coachee/get.js
+      - dist/src/lambdas/api/coachee/common.js
+  events:
+    - http:
+        path: /coachee/{id}
+        method: get
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Coachee-Create:
+  handler: dist/src/lambdas/api/coachee/create.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coachee/create.js
+      - dist/src/lambdas/api/coachee/common.js
+  events:
+    - http:
+        path: /coachee
+        method: post
+        request:
+          parameters:
+            paths:
+              id: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Coachee-Update:
+  handler: dist/src/lambdas/api/coachee/update.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coachee/update.js
+      - dist/src/lambdas/api/coachee/common.js
+  events:
+    - http:
+        path: /coachee/{id}
+        method: put
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Coachee-Remove:
+  handler: dist/src/lambdas/api/coachee/remove.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coachee/remove.js
+      - dist/src/lambdas/api/coachee/common.js
+  events:
+    - http:
+        path: /coachee/{id}
+        method: delete
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn

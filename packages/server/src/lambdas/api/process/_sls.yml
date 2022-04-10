@@ -1,0 +1,213 @@
+Process-GetAll:
+  handler: dist/src/lambdas/api/process/getAll.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/getAll.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process
+        method: get
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-Get:
+  handler: dist/src/lambdas/api/process/get.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/get.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process/{id}
+        method: get
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-GetForEvaluator:
+  handler: dist/src/lambdas/api/process/get.getByIdForEvaluator
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/get.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process/{id}/evaluator/{email}
+        method: get
+        request:
+          parameters:
+            paths:
+              id: true
+              email: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-Create:
+  handler: dist/src/lambdas/api/process/create.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/create.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process
+        method: post
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-Answers:
+  handler: dist/src/lambdas/api/process/createAnswers.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/createAnswers.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process/{id}/answers
+        method: post
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-EvaluatorAnswers:
+  handler: dist/src/lambdas/api/process/saveEvaluatorAnswers.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/saveEvaluatorAnswers.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - http:
+        path: /process/{id}/answers/{email}
+        method: post
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-GenerateExcel:
+  handler: dist/src/lambdas/api/process/generateExcel.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/generateExcel.js
+      - dist/src/lambdas/api/process/common.js
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-UploadPdf:
+  handler: dist/src/lambdas/api/process/uploadPdf.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/uploadPdf.js
+      - dist/src/lambdas/api/process/common.js
+  events:
+    - s3:
+        bucket: beyond-processes
+        event: s3:ObjectCreated:*
+        rules:
+          - suffix: .pdf
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Process-Reminder:
+  handler: dist/src/lambdas/api/process/reminder.handler
+  events:
+    - schedule: cron(0 8 ? * MON-FRI *)
+  timeout: 900
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/process/reminder.js
+      - dist/src/lambdas/api/process/common.js
+  role: !GetAtt CognitoAccessLambdaRole.Arn

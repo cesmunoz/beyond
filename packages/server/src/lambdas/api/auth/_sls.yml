@@ -1,0 +1,80 @@
+Auth-ChangePassword:
+  handler: dist/src/lambdas/api/auth/changePassword.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/auth/changePassword.js
+      - dist/src/lambdas/api/auth/common.js
+  events:
+    - http:
+        path: /auth/changePassword
+        method: post
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Auth-GetUserInfo:
+  handler: dist/src/lambdas/api/auth/get.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/auth/get.js
+  events:
+    - http:
+        path: /auth
+        method: get
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+  role: !GetAtt CognitoAccessLambdaRole.Arn
+
+Auth-UpdateUserInfo:
+  handler: dist/src/lambdas/api/auth/update.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/auth/update.js
+  events:
+    - http:
+        path: /auth
+        method: PUT
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+  role: !GetAtt CognitoAccessLambdaRole.Arn

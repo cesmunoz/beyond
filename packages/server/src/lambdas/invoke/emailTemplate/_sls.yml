@@ -1,0 +1,8 @@
+EmailTemplate:
+  handler: dist/src/lambdas/invoke/emailTemplate/index.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/invoke/emailTemplate/index.js      
+  role: !GetAtt CognitoAccessLambdaRole.Arn

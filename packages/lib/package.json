@@ -1,0 +1,13 @@
+{
+  "name": "@beyond/lib",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clean:deployTest": "find . -name \"*.js\" -type f -delete && find . -name \"*.js.map\" -type f -delete && find . -name \"*.d.ts\" -type f -delete"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "PK": "FORMS#TEAM",
+  "SK": "v0",
+  "currentVersion": "1",
+  "questionnaireType": "TEAM",
+  "questionnaire": [
+    {
+      "category": "Team",
+      "questions": [
+        {
+          "id": 1,
+          "type": "rate",
+          "question": "El equipo tiene un propósito común que es inspirador, entusiasma a sus miembros, y es compartido por todos"
+        },
+        {
+          "id": 2,
+          "type": "rate",
+          "question": "El equipo tiene claros sus objetivos o metas de desempeño"
+        },
+        {
+          "id": 3,
+          "type": "rate",
+          "question": "Los roles dentro del equipo están claramente definidos y acordados"
+        },
+        {
+          "id": 4,
+          "type": "rate",
+          "question": "El rol del líder está claramente definido y es reconocido por los miembros del equipo"
+        },
+        {
+          "id": 5,
+          "type": "rate",
+          "question": "Existen acuerdos operativos o reglas de funcionamiento definidas para el equipo"
+        },
+        {
+          "id": 6,
+          "type": "rate",
+          "question": "Los miembros del equipo cumplen con los acuerdos y hay un alto grado de compromiso"
+        },
+        {
+          "id": 7,
+          "type": "rate",
+          "question": "Se respetan los tiempos de los miembros del equipo en las reuniones, trabajos y toma de decisiones"
+        },
+        {
+          "id": 8,
+          "type": "rate",
+          "question": "Los conflictos se tratan de manera abierta y se resuelven constructivamente"
+        },
+        {
+          "id": 9,
+          "type": "rate",
+          "question": "La información circula con la fluidez necesaria para tomar decisiones y que todos los miembros puedan aportar"
+        },
+        {
+          "id": 10,
+          "type": "rate",
+          "question": "Existe apertura en el equipo para escucharse unos a otros sin juzgarse y dar la opinión propia de forma respetuosa"
+        },
+        {
+          "id": 11,
+          "type": "rate",
+          "question": "Los miembros del equipo se dan y reciben feedback de manera constructiva"
+        },
+        {
+          "id": 12,
+          "type": "rate",
+          "question": "Hay confianza en el equipo, sobre las habilidades, intenciones y colaboración de cada uno, se respeta la confidencialidad y se limita el radiopasillo"
+        },
+        {
+          "id": 13,
+          "type": "rate",
+          "question": "Las emociones están presentes en el día a día del equipo, y se aprovecha su energía para el logro de los resultados"
+        },
+        {
+          "id": 14,
+          "type": "rate",
+          "question": "Hay reconocimiento y celebración, tanto de los logros comunes como los individuales"
+        },
+        {
+          "id": 15,
+          "type": "rate",
+          "question": "Los miembros del equipo disfrutan de trabajar juntos, y esto se contagia a otros en la organización"
+        },
+        {
+          "id": 16,
+          "type": "rate",
+          "question": "El equipo prioriza tanto los logros y resultados de equipo, como las relaciones y el bienestar de las personas"
+        },
+        {
+          "id": 17,
+          "type": "rate",
+          "question": "En el equipo predomina un clima de entusiasmo y de optimismo ante los desafíos"
+        },
+        {
+          "id": 18,
+          "type": "rate",
+          "question": "Los miembros del equipo están abiertos al cambio y a la innovación "
+        },
+        {
+          "id": 19,
+          "type": "rate",
+          "question": "Los miembros del equipo se relacionan de manera colaborativa con otros equipos"
+        },
+        {
+          "id": 20,
+          "type": "rate",
+          "question": "Los estilos diversos de cada miembro del equipo son aceptados, valorados y aprovechados"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@beyond/infra",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "cross-env SLS_DEBUG=*  && sls deploy --noDeploy",
+    "migrate": "sls dynamodb migrate"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "serverless": "^1.67.0",
+    "serverless-deployment-bucket": "^1.1.1",
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-offline": "^6.1.4"
+  }
+}

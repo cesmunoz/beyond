@@ -1,0 +1,107 @@
+Coach-GetAll:
+  handler: dist/src/lambdas/api/coach/getAll.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coach/getAll.js
+      - dist/src/lambdas/api/coach/common.js
+  events:
+    - http:
+        path: /coach
+        method: get
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+
+Coach-Get:
+  handler: dist/src/lambdas/api/coach/get.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coach/get.js
+      - dist/src/lambdas/api/coach/common.js
+  events:
+    - http:
+        path: /coach/{id}
+        method: get
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+
+Coach-Update:
+  handler: dist/src/lambdas/api/coach/update.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coach/update.js
+      - dist/src/lambdas/api/coach/common.js
+  events:
+    - http:
+        path: /coach/{id}
+        method: put
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent
+
+Coach-Remove:
+  handler: dist/src/lambdas/api/coach/remove.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/coach/remove.js
+      - dist/src/lambdas/api/coach/common.js
+  events:
+    - http:
+        path: /coach/{id}
+        method: delete
+        request:
+          parameters:
+            paths:
+              id: true
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent

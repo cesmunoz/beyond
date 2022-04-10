@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "esnext",
+    "target": "es5",
+    "baseUrl": "./src",
+    "paths": {
+      "@beyond/lib": [
+        "../../lib"
+      ]
+    },
+    "noEmit": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/__tests__/*.spec.ts"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}

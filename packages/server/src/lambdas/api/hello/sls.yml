@@ -1,0 +1,26 @@
+hello:
+  handler: dist/src/lambdas/api/hello/handler.authHandler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/api/hello/handler.js
+  events:
+    - http:
+        path: /hello
+        method: get
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: 
+            'Fn::ImportValue': CustomApiGatewayAuthorizer-ref
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - Authorization
+            - If-None-Match
+            - If-Modified-Since
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
+            - X-Amz-User-Agent

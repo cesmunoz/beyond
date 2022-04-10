@@ -1,0 +1,91 @@
+import { combineReducers, AnyAction } from 'redux';
+
+import {
+  GET_PROCESSES_SUCCESS,
+  GET_PROCESSES_FAILURE,
+  GET_PROCESSES_REQUEST,
+  POST_PROCESS_REQUEST,
+  POST_PROCESS_SUCCESS,
+  POST_PROCESS_FAILURE,
+  GET_PROCESS_SUCCESS,
+  GET_PROCESS_FAILURE,
+  GET_PROCESS_REQUEST,
+  CREATE_ANSWERS_REQUEST,
+  CREATE_ANSWERS_FAILURE,
+  CREATE_ANSWERS_SUCCESS,
+  UPLOAD_REPORT_REQUEST,
+  UPLOAD_REPORT_SUCCESS,
+  UPLOAD_REPORT_FAILURE,
+} from './processes';
+import {
+  GET_COACHEES_REQUEST,
+  GET_COACHEES_SUCCESS,
+  GET_COACHEES_FAILURE,
+  GET_COACHEE_SUCCESS,
+  GET_COACHEE_FAILURE,
+  GET_COACHEE_REQUEST,
+  POST_COACHEE_REQUEST,
+  POST_COACHEE_SUCCESS,
+  POST_COACHEE_FAILURE,
+} from './coachees';
+import {
+  GET_QUESTIONNAIRES_SUCCESS,
+  GET_QUESTIONNAIRES_FAILURE,
+  GET_QUESTIONNAIRES_REQUEST,
+} from './questionnaires';
+import {
+  CHANGE_PASSWORD_REQUEST,
+  CHANGE_PASSWORD_SUCCESS,
+  CHANGE_PASSWORD_FAILURE,
+  UPDATE_USER_INFO_REQUEST,
+  UPDATE_USER_INFO_SUCCESS,
+  UPDATE_USER_INFO_FAILURE,
+} from './auth';
+
+export function makeReducer(
+  request: string,
+  success: string,
+  failure: string,
+  initialState = false,
+) {
+  return function reducer(state = initialState, action: AnyAction): boolean {
+    if (action.type === request) {
+      return true;
+    }
+    if (action.type === success || action.type === failure) {
+      return false;
+    }
+
+    return state;
+  };
+}
+
+export default combineReducers({
+  processes: makeReducer(GET_PROCESSES_REQUEST, GET_PROCESSES_SUCCESS, GET_PROCESSES_FAILURE),
+  coachees: makeReducer(GET_COACHEES_REQUEST, GET_COACHEES_SUCCESS, GET_COACHEES_FAILURE),
+  coacheeDetail: makeReducer(GET_COACHEE_REQUEST, GET_COACHEE_SUCCESS, GET_COACHEE_FAILURE),
+  newCoachee: makeReducer(POST_COACHEE_REQUEST, POST_COACHEE_SUCCESS, POST_COACHEE_FAILURE),
+  newProcess: makeReducer(POST_PROCESS_REQUEST, POST_PROCESS_SUCCESS, POST_PROCESS_FAILURE),
+  processDetail: makeReducer(GET_PROCESS_REQUEST, GET_PROCESS_SUCCESS, GET_PROCESS_FAILURE),
+  questions: makeReducer(
+    GET_QUESTIONNAIRES_REQUEST,
+    GET_QUESTIONNAIRES_SUCCESS,
+    GET_QUESTIONNAIRES_FAILURE,
+  ),
+  createAnswers: makeReducer(
+    CREATE_ANSWERS_REQUEST,
+    CREATE_ANSWERS_SUCCESS,
+    CREATE_ANSWERS_FAILURE,
+  ),
+  changePassword: makeReducer(
+    CHANGE_PASSWORD_REQUEST,
+    CHANGE_PASSWORD_SUCCESS,
+    CHANGE_PASSWORD_FAILURE,
+  ),
+  uploadReport: makeReducer(UPLOAD_REPORT_REQUEST, UPLOAD_REPORT_SUCCESS, UPLOAD_REPORT_FAILURE),
+  updateProfile: makeReducer(
+    UPDATE_USER_INFO_REQUEST,
+    UPDATE_USER_INFO_SUCCESS,
+    UPDATE_USER_INFO_FAILURE,
+  ),
+});

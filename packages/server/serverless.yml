@@ -1,0 +1,78 @@
+service: beyond-server
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-jest-plugin
+  - serverless-hooks-plugin
+  - serverless-offline
+
+custom:
+  deploymentBucket:
+    versioning: true
+  hooks:
+    before:package:createDeploymentArtifacts:
+      - yarn pre-deploy
+    after:deploy:functions:
+      - yarn clean:deploy
+  serverless-offline:
+    port: 8080
+
+layers:
+  nodeModules:
+    path: ./.serverless-layers/node-layers
+    name: Beyond-Server-Node-Dependencies
+    description: Node Modules for Beyond Server
+    compatibleRuntimes:
+      - nodejs10.x
+    package:
+      include:
+        - ./**
+
+package:
+  individually: true
+  excludeDevDependencies: false
+  exclude:
+    - ./**
+  include:
+    - dist/src/shared/**/*.js
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-west-2
+  stage: ${opt:stage, 'dev'}
+  timeout: 30
+  deploymentBucket:
+    name: beyond-server-deployment-bucket
+    serverSideEncryption: AES256
+  apiGateway:
+    restApiId:
+      'Fn::ImportValue': CustomApiGateway-restApiId
+    restApiRootResourceId:
+      'Fn::ImportValue': CustomApiGateway-rootResourceId
+  environment:
+    GENERATE_EXCEL_LAMBDA: '${self:service.name}-${opt:stage}-Process-GenerateExcel'
+    ENV: '${opt:stage}'
+    USER_POOL_ID: !Join ['', [!ImportValue CognitoUserPoolId]]
+    USER_POOL_CLIENT_ID: !Join ['', [!ImportValue CognitoUserPoolClientId]]
+    WEBSITE_URL: 'https://d28oi91idnh4ri.cloudfront.net'
+    EMAIL_ENABLED: true
+    EMAIL_ADDRESS_SENDER: 'beyond@caleido.com.ar'
+
+functions:
+  # Invoke
+  - ${file(./src/lambdas/invoke/coach/sls.yml)}
+  - ${file(./src/lambdas/invoke/questionnaire/_sls.yml)}
+  - ${file(./src/lambdas/invoke/emailTemplate/_sls.yml)}
+  - ${file(./src/lambdas/invoke/seedInit/_sls.yml)}
+  # Api
+  - ${file(./src/lambdas/api/auth/_sls.yml)}
+  - ${file(./src/lambdas/api/hello/sls.yml)}
+  - ${file(./src/lambdas/api/coach/_sls.yml)}
+  - ${file(./src/lambdas/api/coachee/_sls.yml)}
+  - ${file(./src/lambdas/api/process/_sls.yml)}
+  - ${file(./src/lambdas/api/questionnaire/_sls.yml)}
+  - ${file(./src/lambdas/api/summary/_sls.yml)}
+
+resources:
+  - ${file(./.resources/roles.yml)}

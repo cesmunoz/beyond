@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    restart: always
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:8000/shell/ || exit 1']
+      interval: 1s
+      timeout: 10s
+      retries: 3
+    ports:
+      - '8100:8000'
+    command: '-jar DynamoDBLocal.jar -sharedDb -dbPath .'
+    volumes:
+      - beyonddata:/home/dynamodblocal
+    working_dir: /home/dynamodblocal
+    
+volumes:
+  beyonddata: {}

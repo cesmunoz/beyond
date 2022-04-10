@@ -1,0 +1,41 @@
+Resources:
+  CognitoUserPool:
+    Type: 'AWS::Cognito::UserPool'
+    Properties:
+      UserPoolName: beyond-user-pool
+      UsernameConfiguration:
+        CaseSensitive: false
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      Schema:
+        - Name: role
+          AttributeDataType: String
+          DeveloperOnlyAttribute: false
+          Mutable: false
+          Required: false
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: true
+
+  CognitoUserPoolClient:
+    Type: 'AWS::Cognito::UserPoolClient'
+    Properties:
+      ClientName: beyond-user-pool-client
+      UserPoolId:
+        Ref: CognitoUserPool
+      ExplicitAuthFlows:
+        - ADMIN_NO_SRP_AUTH
+      GenerateSecret: false
+
+Outputs:
+  UserPoolId:
+    Value:
+      Ref: CognitoUserPool
+    Export:
+      Name: CognitoUserPoolId
+  UserPoolClientId:
+    Value:
+      Ref: CognitoUserPoolClient
+    Export:
+      Name: CognitoUserPoolClientId

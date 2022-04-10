@@ -1,0 +1,13 @@
+node_modules
+.build
+.dist
+dist
+npm-debug.log
+.env
+*.log
+.serverless
+.serverless-layers
+tsconfig.tsbuildinfo
+**/*.d.ts
+**/*.js
+**/*.js.map

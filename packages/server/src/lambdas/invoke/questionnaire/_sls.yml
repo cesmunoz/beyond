@@ -1,0 +1,10 @@
+questionnaireNewVersion:
+  handler: dist/src/lambdas/invoke/questionnaire/create.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/invoke/questionnaire/create.js
+      - dist/src/lambdas/invoke/questionnaire/seeds/questionnaire-individual.json
+      - dist/src/lambdas/invoke/questionnaire/seeds/questionnaire-team.json
+  role: !GetAtt CognitoAccessLambdaRole.Arn

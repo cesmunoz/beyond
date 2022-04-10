@@ -1,0 +1,9 @@
+Coach-Create:
+  handler: dist/src/lambdas/invoke/coach/create.handler
+  layers:
+    - Ref: NodeModulesLambdaLayer
+  package:
+    include:
+      - dist/src/lambdas/invoke/coach/create.js
+      - dist/src/lambdas/invoke/coach/common.js
+  role: !GetAtt CognitoAccessLambdaRole.Arn

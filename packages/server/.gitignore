@@ -1,0 +1,11 @@
+node_modules
+.build
+.dist
+dist
+npm-debug.log
+.env
+*.log
+.serverless
+.serverless-layers
+src/**/*.js
+src/**/*.js.map

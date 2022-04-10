@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoacheeCard /> should render an active coachee correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiCard-root makeStyles-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+    id="1"
+    style="min-height: 70px;"
+  >
+    <div
+      class="MuiCardContent-root makeStyles-cardContent-3"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-48 makeStyles-coacheeContent-9"
+      >
+        <div
+          class="makeStyles-avatarContainer-8"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-6 MuiAvatar-colorDefault"
+          >
+            FA
+          </div>
+        </div>
+        <div
+          class="makeStyles-coacheeInfo-10 false"
+        >
+          <h6
+            class="MuiTypography-root makeStyles-coacheeDisplayName-11 MuiTypography-h6"
+            title="falecci@morean.co"
+          >
+            falecci@morean.co
+          </h6>
+          <h6
+            class="MuiTypography-root makeStyles-coacheeText-12 MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+          >
+            Morean
+          </h6>
+        </div>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root makeStyles-coacheeChevron-15"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<CoacheeCard /> should render an inactive coachee correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiCard-root makeStyles-card-95 MuiPaper-elevation1 MuiPaper-rounded"
+    id="1"
+    style="min-height: 70px;"
+  >
+    <div
+      class="MuiCardContent-root makeStyles-cardContent-97"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-142 makeStyles-coacheeContent-103"
+      >
+        <div
+          class="makeStyles-avatarContainer-102"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-100 MuiAvatar-colorDefault"
+          >
+            FA
+          </div>
+        </div>
+        <div
+          class="makeStyles-coacheeInfo-104 makeStyles-inactive-99"
+        >
+          <h6
+            class="MuiTypography-root makeStyles-coacheeDisplayName-105 MuiTypography-h6"
+            title="falecci@morean.co"
+          >
+            falecci@morean.co
+          </h6>
+          <h6
+            class="MuiTypography-root makeStyles-coacheeText-106 MuiTypography-subtitle1 MuiTypography-colorTextSecondary"
+          >
+            Morean
+          </h6>
+        </div>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root makeStyles-coacheeChevron-109"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

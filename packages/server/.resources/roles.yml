@@ -1,0 +1,49 @@
+Resources:
+  CognitoAccessLambdaRole:
+    Type: AWS::IAM::Role
+    Description: Common lambda role for access to Cognito
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action:
+              - sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+        Version: '2012-10-17'
+      Path: /
+      Policies:
+        - PolicyDocument:
+            Statement:
+              - Action:
+                  - cognito-idp:*
+                Effect: Allow
+                Resource: '*'
+              - Action:
+                  - dynamodb:GetItem
+                  - dynamodb:Query
+                  - dynamodb:PutItem
+                  - dynamodb:UpdateItem
+                  - dynamodb:Scan
+                  - dynamodb:DeleteItem
+                  - dynamodb:ConditionCheckItem
+                Effect: Allow
+                Resource:
+                  - 'arn:aws:dynamodb:*:*:table/Beyond*'
+              - Action:
+                  - ses:*
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - lambda:InvokeFunction
+                Resource: '*'
+                Effect: Allow
+              - Action:
+                  - s3:putObject
+                  - s3:getObject
+                Resource: '*'
+                Effect: Allow
+            Version: '2012-10-17'
+          PolicyName: InlinePolicy
+      RoleName: CognitoAccessLambdaRole

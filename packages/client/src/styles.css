@@ -1,0 +1,26 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+.flex-column {
+  @apply flex flex-col;
+}
+
+.flex-center-x {
+  @apply flex justify-center items-center;
+}
+
+.full-size {
+  @apply h-full w-full;
+}
+
+@font-face {
+  font-family: 'ProximaNova-Extrabld';
+  src: url('/fonts/proximanova-extrabld-webfont.eot');
+  src: local('?'), url('/fonts/proximanova-extrabld-webfont.woff') format('woff'),
+    url('/fonts/proximanova-extrabld-webfont.ttf') format('truetype'),
+    url('/fonts/proximanova-extrabld-webfontt#ProximaNova-Extrabld') format('svg');
+  font-style: normal;
+}

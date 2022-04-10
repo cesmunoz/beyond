@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800&display=swap"
+    />
+
+    <style>
+      @font-face {
+        font-family: 'Muli';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/muli/v22/7Auwp_0qiz-afT3GLQjUwkQ1OQ.woff2) format('woff2');
+      }
+      
+      body {
+        font-family: 'Muli';
+      }
+
+      .header {
+        width: 610px;
+        height: 25px;
+        box-shadow: 0 12px 20px 0 rgba(16, 132, 140, 0.2);
+        background-color: #76d8ce;
+        padding: 12px 15px 13px 15px;
+      }
+
+      .title {
+        height: 24px;
+        font-family: Muli;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.71;
+        letter-spacing: 1.56px;
+        color: #ffffff;
+        float: left;
+      }
+
+      .greetings {
+        height: 24px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.71;
+        text-align: right;
+        color: #ffffff;
+      }
+
+      .content {
+        width: 640px;
+        height: 697px;
+        background: url('https://beyond-public-images.s3-us-west-2.amazonaws.com/clouds.png')
+            no-repeat right 50px/90%,
+          linear-gradient(to bottom, #53c5ba, #f9ffff);
+        text-align: center;
+      }
+
+      .middle {
+        padding-top: 34px;
+        padding-bottom: 90px;
+      }
+
+      .image {
+        height: 112px;
+        padding-bottom: 29px;
+        width: 175px;
+      }
+
+      .content-msg {
+        font-size: 34px;
+        line-height: 0.88;
+        color: #ffffff;
+        padding-bottom: 38px;
+      }
+
+      .rectangle {
+        color: #000000;
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+        background-color: #ffffff;
+        margin: 0 84px 0 84px;
+        padding: 0 48px 0 48px;
+        text-align: center;
+      }
+
+      .message {
+        width: 376px;
+        height: 48px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.33;
+        text-align: center;
+        color: #333333;
+        padding-top: 42px;
+        padding-bottom: 32px;
+      }
+
+      .instructions {
+        color: rgba(0, 0, 0, 0.45);
+        margin-bottom: 17px;
+        padding-left: 20px;
+        padding-right: 10px;
+        text-align: left;
+      }
+
+      .btn {
+        width: 236px;
+        height: 48px;
+        border: 0px;
+        border-radius: 10px;
+        background-color: #30ddd6;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.14;
+        letter-spacing: 1.2px;
+        text-align: center;
+        color: #ffffff;
+        cursor: pointer;
+        margin-top: 16px;
+      }
+
+      .footer {
+        color: #000000;
+        width: 640px;
+        height: 172px;
+        background-color: #ffffff;
+        padding-top: 57px;
+        margin-bottom: 62px;
+      }
+
+      .contact-us {
+        width: 592px;
+        height: 15px;
+        font-size: 12px;
+        text-align: center;
+        color: #999999;
+        padding-bottom: 23px;
+      }
+
+      .contact-link {
+        font-weight: bold;
+        color: #35bcc5;
+      }
+
+      .copyright {
+        width: 592px;
+        height: 15px;
+        font-size: 12px;
+        text-align: center;
+        color: #999999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="header">
+        <div class="title">BEYOND</div>
+        <div class="greetings">¡Hola, coach!</div>
+      </div>
+      <div class="content">
+        <div class="middle">
+          <div>
+            <img
+              class="image"
+              src="https://beyond-public-images.s3-us-west-2.amazonaws.com/done.png"
+            />
+          </div>
+          <div class="content-msg">{{coachee}} terminó su proceso</div>
+          <div class="rectangle">
+            <div class="message">Tienes hasta el {{dueDate}} para armar el informe</div>            
+            <div>
+              <a href="{{url}}/processes?id={{processId}}" target="_blank">
+                <button class="btn">IR AL PROCESO</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="contact-us">
+            Si tenes un problema, <span class="contact-link">contáctanos</span>
+          </div>
+          <div class="copyright">BEYOND Copyright 2020 - Todos los derechos reservados.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

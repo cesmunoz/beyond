@@ -1,0 +1,21 @@
+nextApp:
+  component: serverless-next.js@1.9.5
+  inputs:
+    bucketName: beyond-client-deployment-bucket
+    build:
+      env:
+        USER_POOL_ID: ${env.USER_POOL_ID}
+        USER_POOL_WEB_CLIENT_ID: ${env.USER_POOL_WEB_CLIENT_ID}
+        AWS_REGION: ${env.AWS_REGION}
+        NODE_ENV: production
+    cloudfront:
+      # this is the default cache behaviour of the cloudfront distribution
+      # the origin-request edge lambda associated to this cache behaviour does the pages server side rendering
+      defaults:
+        forward:
+          headers:
+            [CloudFront-Is-Desktop-Viewer, CloudFront-Is-Mobile-Viewer, CloudFront-Is-Tablet-Viewer]
+          cookies: ['beyond-token']
+    name:
+      defaultLambda: beyond-client-default-lambda
+      apiLambda: beyond-client-api-lambda

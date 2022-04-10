@@ -1,0 +1,321 @@
+[
+  {
+    "PK": "COACH#1",
+    "SK": "COACH",
+    "coachId": "1",
+    "firstName": "Marcela",
+    "lastName": "Lopez"
+  },
+  {
+    "PK": "COACH#2",
+    "SK": "COACH",
+    "coachId": "2",
+    "firstName": "Lujan",
+    "lastName": "Gonzalez"
+  },
+  {
+    "PK": "COACH#3",
+    "SK": "COACH",
+    "coachId": "3",
+    "firstName": "John",
+    "lastName": "Smith"
+  },
+  {
+    "currentVersion": 1,
+    "PK": "FORMS#INDIVIDUAL",
+    "questionnaire": [
+      {
+        "category": "Introvertido/Extrovertido",
+        "questions": [
+          {
+            "evaluator": "Le resulta difícil presentarse a si mismo ante otras personas",
+            "id": 1,
+            "question": "Te resulta difícil presentarte a vos mismo ante otras personas",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Se siente más cómodo y productivo en un entorno silencioso y calmo que en medio del ruido y rodeado de otras personas",
+            "id": 2,
+            "question": "Te sentís más cómodo y productivo en un entorno silencioso y calmo que en medio del ruido y rodeado de otras personas",
+            "type": "rate"
+          },
+          {
+            "evaluator": "No le importa ni le incomoda ser el centro de atención",
+            "id": 3,
+            "question": "No te importa ni te incomoda ser el centro de atención",
+            "type": "rate"
+          },
+          {
+            "evaluator": "No le lleva mucho tiempo comenzar a integrarse en actividades sociales en su nuevo entorno de trabajo",
+            "id": 4,
+            "question": "No te lleva mucho tiempo comenzar a integrarte en actividades sociales en tu nuevo entorno de trabajo",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Se considera una persona relativamente reservada y callada",
+            "id": 5,
+            "question": "Te considerás una persona relativamente reservada y callada",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Se siente más energizado y dinámico después de pasar tiempo con un grupo de personas",
+            "id": 6,
+            "question": "Te sentís más energizado y dinámico después de pasar tiempo con un grupo de personas",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Toma la iniciativa frecuentemente en situaciones sociales",
+            "id": 7,
+            "question": "Tomás la iniciativa frecuentemente en situaciones sociales",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Emocional/Mental",
+        "questions": [
+          {
+            "evaluator": "Es muy raro que la gente le haga sentir alterado o molesto",
+            "id": 1,
+            "question": "Es muy raro que la gente te haga sentir alterado o molesto",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Con frecuencia le resulta difícil entender los sentimientos de otras personas",
+            "id": 2,
+            "question": "Con frecuencia te resulta difícil entender los sentimientos de otras personas",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Le resulta difícil distinguir sus emociones y ponerle nombre",
+            "id": 3,
+            "question": "Te resulta difícil distinguir tus emociones y ponerle nombre",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Su estado de ánimo o humor puede cambiar muy rápidamente",
+            "id": 4,
+            "question": "Tu estado de ánimo o humor puede cambiar muy rápidamente",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Sus emociones le controlan más de lo que él/ella las controla a ellas",
+            "id": 5,
+            "question": "Tus emociones te controlan más de lo que vos las controlás a ellas",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Considera que la lógica generalmente es más importante que el corazón cuando se trata de tomar decisiones importantes",
+            "id": 6,
+            "question": "Considerás que la lógica generalmente es más importante que el corazón cuando se trata de tomar decisiones importantes",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Si su amigo o colega se siente triste por algo es más probable que le ofrezca apoyo emocional que sugerirle formas de tratar el problema",
+            "id": 7,
+            "question": "Si tu amigo o colega se siente triste por algo es más probable que le ofrezcas apoyo emocional que sugerirle formas de tratar el problema",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Ejecución/Idealista",
+        "questions": [
+          {
+            "evaluator": "Se considera una persona más práctica que creativa",
+            "id": 1,
+            "question": "Te considerás una persona más práctica que creativa",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Se pone nervioso cuando las cosas no se concretan rápido",
+            "id": 2,
+            "question": "Te ponés nervioso cuando las cosas no se concretan rápido",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Para él/ella ser capaz de desarrollar un buen plan es la parte más importante de todo proyecto",
+            "id": 3,
+            "question": "Ser capaz de desarrollar un buen plan es la parte más importante de todo proyecto",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Es muy raro que se deje llevar por fantasías y sueños",
+            "id": 4,
+            "question": "Es muy raro que te dejes llevar por fantasías y sueños",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Es más una persona de acción que un planificador detallista",
+            "id": 5,
+            "question": "Sos más una persona de acción que un planificador detallista",
+            "type": "rate"
+          },
+          {
+            "evaluator": "A menudo pasa tiempo explorando ideas poco prácticas pero interesantes",
+            "id": 6,
+            "question": "A menudo pasás tiempo explorando ideas poco prácticas pero interesantes",
+            "type": "rate"
+          },
+          {
+            "evaluator": "Por lo general confiá más en su experiencia que en su imaginación",
+            "id": 7,
+            "question": "Por lo general confiás más en tu experiencia que en tu imaginación",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Preguntas_abiertas",
+        "questions": [
+          {
+            "id": 1,
+            "evaluator": "¿Cuáles consideras que son las 2-3 fortalezas de esta persona? Podrías dar algún ejemplo?",
+            "type": "text"
+          },
+          {
+            "id": 2,
+            "evaluator": "Qué considerás que es aquello que si la persona lo cambia, o lo empieza a hacer, tendría un efecto significativo en su vida profesional o personal? Podrías dar algún ejemplo?",
+            "type": "text"
+          }
+        ],
+        "onlyEvaluator": true
+      }
+    ],
+    "questionnaireType": "INDIVIDUAL",
+    "SK": "v0"
+  },
+  {
+    "currentVersion": 1,
+    "PK": "FORMS#TEAM",
+    "questionnaire": [
+      {
+        "category": "Objetivos_y_Roles",
+        "questions": [
+          {
+            "id": 1,
+            "question": "El equipo tiene un propósito común que es inspirador, entusiasma a sus miembros, y es compartido por todos",
+            "type": "rate"
+          },
+          {
+            "id": 2,
+            "question": "El equipo tiene claros sus objetivos o metas de desempeño",
+            "type": "rate"
+          },
+          {
+            "id": 3,
+            "question": "Los roles dentro del equipo están claramente definidos y acordados",
+            "type": "rate"
+          },
+          {
+            "id": 4,
+            "question": "El rol del líder está claramente definido y es reconocido por los miembros del equipo",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Acuerdos_y_manejo_de_desacuerdos",
+        "questions": [
+          {
+            "id": 5,
+            "question": "Existen acuerdos operativos o reglas de funcionamiento definidas para el equipo",
+            "type": "rate"
+          },
+          {
+            "id": 6,
+            "question": "Los miembros del equipo cumplen con los acuerdos y hay un alto grado de compromiso",
+            "type": "rate"
+          },
+          {
+            "id": 7,
+            "question": "Se respetan los tiempos de los miembros del equipo en las reuniones, trabajos y toma de decisiones",
+            "type": "rate"
+          },
+          {
+            "id": 8,
+            "question": "Los conflictos se tratan de manera abierta y se resuelven constructivamente",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Comunicacion ",
+        "questions": [
+          {
+            "id": 9,
+            "question": "La información circula con la fluidez necesaria para tomar decisiones y que todos los miembros puedan aportar",
+            "type": "rate"
+          },
+          {
+            "id": 10,
+            "question": "Existe apertura en el equipo para escucharse unos a otros sin juzgarse y dar la opinión propia de forma respetuosa",
+            "type": "rate"
+          },
+          {
+            "id": 11,
+            "question": "Los miembros del equipo se dan y reciben feedback de manera constructiva",
+            "type": "rate"
+          },
+          {
+            "id": 12,
+            "question": "Hay confianza en el equipo, sobre las habilidades, intenciones y colaboración de cada uno, se respeta la confidencialidad y se limita el radiopasillo",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Motivacion_y_trabajo_en_equipo",
+        "questions": [
+          {
+            "id": 13,
+            "question": "Las emociones están presentes en el día a día del equipo, y se aprovecha su energía para el logro de los resultados",
+            "type": "rate"
+          },
+          {
+            "id": 14,
+            "question": "Hay reconocimiento y celebración, tanto de los logros comunes como los individuales",
+            "type": "rate"
+          },
+          {
+            "id": 15,
+            "question": "Los miembros del equipo disfrutan de trabajar juntos, y esto se contagia a otros en la organización",
+            "type": "rate"
+          },
+          {
+            "id": 16,
+            "question": "El equipo prioriza tanto los logros y resultados de equipo, como las relaciones y el bienestar de las personas",
+            "type": "rate"
+          }
+        ]
+      },
+      {
+        "category": "Gestion de cambios e innovacion",
+        "questions": [
+          {
+            "id": 17,
+            "question": "En el equipo predomina un clima de entusiasmo y de optimismo ante los desafíos",
+            "type": "rate"
+          },
+          {
+            "id": 18,
+            "question": "Los miembros del equipo están abiertos al cambio y a la innovación ",
+            "type": "rate"
+          },
+          {
+            "id": 19,
+            "question": "Los miembros del equipo se relacionan de manera colaborativa con otros equipos",
+            "type": "rate"
+          },
+          {
+            "id": 20,
+            "question": "Los estilos diversos de cada miembro del equipo son aceptados, valorados y aprovechados",
+            "type": "rate"
+          }
+        ]
+      }
+    ],
+    "questionnaireType": "TEAM",
+    "SK": "v0"
+  }
+]

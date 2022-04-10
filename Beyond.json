@@ -1,0 +1,88 @@
+{
+  "ModelName": "Beyond",
+  "ModelMetadata": {
+    "Author": "Bros Consulting",
+    "DateCreated": "Jul 04, 2020, 10:18 PM",
+    "DateLastModified": "Jul 04, 2020, 11:58 PM",
+    "Description": "",
+    "Version": "1.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "Beyond",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "coachId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "firstName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "lastName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "email",
+          "AttributeType": "S"
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "COACH#1"
+          },
+          "SK": {
+            "S": "COACH"
+          },
+          "coachId": {
+            "S": "1"
+          },
+          "firstName": {
+            "S": "Marcela"
+          },
+          "lastName": {
+            "S": "Lopez"
+          },
+          "email": {
+            "S": "marcela@beyond.com"
+          }
+        },
+        {
+          "PK": {
+            "S": "COACH#2"
+          },
+          "SK": {
+            "S": "COACH"
+          },
+          "coachId": {
+            "S": "2"
+          },
+          "firstName": {
+            "S": "Lujan"
+          },
+          "lastName": {
+            "S": "Gonzalez"
+          },
+          "email": {
+            "S": "lujan@beyond.com"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}

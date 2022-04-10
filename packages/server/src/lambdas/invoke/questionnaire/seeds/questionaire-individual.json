@@ -1,0 +1,128 @@
+{
+  "PK": "FORMS#INDIVIDUAL",
+  "SK": "v0",
+  "currentVersion": "1",
+  "questionnaireType": "INDIVIDUAL",
+  "questionnaire": [
+    {
+      "category": "Introvertido/Extrovertido",
+      "questions": [
+        {
+          "id": 1,
+          "type": "rate",
+          "question": "Te resulta difícil presentarte a vos mismo ante otras personas (5 es Introvertido)"
+        },
+        {
+          "id": 2,
+          "type": "rate",
+          "question": "Te sentís más cómodo y productivo en un entorno silencioso y calmo que en medio del ruido y rodeado de otras personas (5 es Introvertido)"
+        },
+        {
+          "id": 3,
+          "type": "rate",
+          "question": "No te importa ni te incomoda ser el centro de atención (5 es Extrovertido y 1 es Introvertido)"
+        },
+        {
+          "id": 4,
+          "type": "rate",
+          "question": "No te lleva mucho tiempo comenzar a integrarte en actividades sociales en tu nuevo entorno de trabajo"
+        },
+        {
+          "id": 5,
+          "type": "rate",
+          "question": "Te considerás una persona relativamente reservada y callada"
+        },
+        {
+          "id": 6,
+          "type": "rate",
+          "question": "Te sentís más energizado y dinámico después de pasar tiempo con un grupo de personas"
+        },
+        {
+          "id": 7,
+          "type": "rate",
+          "question": "Tomás la iniciativa frecuentemente en situaciones sociales"
+        }
+      ]
+    },
+    {
+      "category": "Emocional/Mental",
+      "questions": [
+        {
+          "id": 1,
+          "type": "rate",
+          "question": "Es muy raro que la gente te haga sentir alterado o molesto"
+        },
+        {
+          "id": 2,
+          "type": "rate",
+          "question": "Con frecuencia te resulta difícil entender los sentimientos de otras personas"
+        },
+        {
+          "id": 3,
+          "type": "rate",
+          "question": "Te resulta difícil distinguir tus emociones y ponerle nombre"
+        },
+        {
+          "id": 4,
+          "type": "rate",
+          "question": "Tu estado de ánimo o humor puede cambiar muy rápidamente"
+        },
+        {
+          "id": 5,
+          "type": "rate",
+          "question": "Tus emociones te controlan más de lo que vos las controlás a ellas"
+        },
+        {
+          "id": 6,
+          "type": "rate",
+          "question": "Considerás que la lógica generalmente es más importante que el corazón cuando se trata de tomar decisiones importantes"
+        },
+        {
+          "id": 7,
+          "type": "rate",
+          "question": "Si tu amigo o colega se siente triste por algo es más probable que le ofrezcas apoyo emocional que sugerirle formas de tratar el problema"
+        }
+      ]
+    },
+    {
+      "category": "Ejecución/Idealista",
+      "questions": [
+        {
+          "id": 1,
+          "type": "rate",
+          "question": "Te considerás una persona más práctica que creativa"
+        },
+        {
+          "id": 2,
+          "type": "rate",
+          "question": "Te ponés nervioso cuando las cosas no se concretan rápido"
+        },
+        {
+          "id": 3,
+          "type": "rate",
+          "question": "Ser capaz de desarrollar un buen plan es la parte más importante de todo proyecto"
+        },
+        {
+          "id": 4,
+          "type": "rate",
+          "question": "Es muy raro que te dejes llevar por fantasías y sueños"
+        },
+        {
+          "id": 5,
+          "type": "rate",
+          "question": "Sos más una persona de acción que un planificador detallista"
+        },
+        {
+          "id": 6,
+          "type": "rate",
+          "question": "A menudo pasás tiempo explorando ideas poco prácticas pero interesantes"
+        },
+        {
+          "id": 7,
+          "type": "rate",
+          "question": "Por lo general confiás más en tu experiencia que en tu imaginación"
+        }
+      ]
+    }
+  ]
+}
